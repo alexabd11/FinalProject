@@ -42,7 +42,7 @@ CREATE TABLE nyc_trees (
 CREATE TABLE zillow_rent_data (
     RegionID INT PRIMARY KEY,
     SizeRank INT,
-    zip_code INT,
+    zip_code VARCHAR(5),
     RegionType VARCHAR(50),
     StateName VARCHAR(50),
     State VARCHAR(2),

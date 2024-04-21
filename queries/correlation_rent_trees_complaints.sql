@@ -28,7 +28,7 @@ SELECT
     COALESCE(tc.tree_count, 0) AS tree_count,
     COALESCE(cc.complaint_count, 0) AS complaint_count
 FROM RentRanked rr
-LEFT JOIN TreeCount tc ON CAST(rr.zip_code AS TEXT) = tc.zip_code
-LEFT JOIN ComplaintCount cc ON CAST(rr.zip_code AS TEXT) = cc.zip_code
+LEFT JOIN TreeCount tc ON rr.zip_code = tc.zip_code
+LEFT JOIN ComplaintCount cc ON rr.zip_code = cc.zip_code
 WHERE rr.rent_asc_rank <= 5 OR rr.rent_desc_rank <= 5
 ORDER BY rr.avg_rent DESC, rr.zip_code;
