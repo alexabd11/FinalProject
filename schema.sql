@@ -63,3 +63,12 @@ CREATE TABLE zillow_rent_data (
     Dec_2023 FLOAT,
     Jan_2024 FLOAT,
 );
+
+CREATE TABLE nyc_bedbug_infestations (
+    infestation_id SERIAL PRIMARY KEY,
+    zip_code VARCHAR(5),
+    infested_dwelling_unit_count INT,
+    latitude FLOAT,
+    longitude FLOAT,
+    geometry GEOMETRY(POINT, 4326)
+);
